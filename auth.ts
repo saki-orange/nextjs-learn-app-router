@@ -38,9 +38,19 @@ export const { auth, signIn, signOut } = NextAuth({
           if (passwordsMatch) return user;
         }
 
-        // console.log("Invalid credentials");
         return null;
       },
     }),
   ],
+  // logger: {
+  //   // `logger`をカスタマイズして、エラーメッセージを出さないようにする
+  //   error(error) {
+  //     if (error.name === "CredentialsSignin") {
+  //       // `CredentialsSignin`エラーのみログを出力しない
+  //       return;
+  //     }
+  //     // logger.tsのデフォルトのエラーログを出力したいところだが、、、
+  //     console.error(error); 
+  //   },
+  // },
 });
